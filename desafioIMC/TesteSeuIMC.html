@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Teste seu IMC </title>
+    <style>
+body {
+    background-color: rgba(0, 0, 139, 0.226);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#msg {
+font-style: italic;
+font: 15px purple;
+width: 200px;
+height: auto;
+padding: 10px;
+border-radius:50px 50px 50px 50px;
+margin: 20px 0 20px 0;
+text-align:center;
+text-decoration: none;
+}
+
+img {
+
+    border-radius: 20px;
+    width: 100px;
+    height:auto;
+}
+
+#title {
+
+    width: 400px;
+    
+    border-radius: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <h1> Calcule seu IMC</h1>
+    <img id="title" src="https://www.saudebemestar.pt/media/89347/obesidade.jpg" > <br>
+    Qual é o seu nome? <br>
+    <input type="text" name="nome" id="nome"> <br>
+     Em que ano você nasceu? <br>
+    <input type="number" name="ano" id="ano"> <br>
+    Quantos quilos você pesa <br> atualmente? <br>
+    <input type="number" name="peso" id="peso"> <br>
+    Qual é a sua altura? <br>
+    e.x: 1.60 (use ponto) <br>
+    <input type="number" name="altura" id="altura"> <br>
+    <input type="button" value="Somar" onclick="somar()">
+
+
+    <section>
+        <div id="msg">  </div>
+        <div id="imagemdiv"> 
+            <img id="imagem" src="" alt="">  
+        </div>
+
+    </section>
+    
+  <script>
+       function somar() {
+        var nome = document.getElementById("nome").value;
+        var ano = document.getElementById("ano").value;
+        var agora = new Date();
+        var anoa = agora.getFullYear();
+        var idade = Number(anoa) - Number(ano);
+        var peso = document.getElementById("peso").value;
+        var altura = document.getElementById("altura").value;
+        var imc = Number(peso) / (Number(altura) ** 2);
+        var msg = document.getElementById("msg");
+        var imagemdiv = document.getElementById("imagem");
+
+        msg.innerHTML = `Olá, ${nome} ! Você tem ${idade} anos de idade e seu IMC é ${imc.toFixed(2)}`;
+
+        if (imc <= 18.5) {
+            imagem.src = "-18.5.jpg";
+            document.body.style.background = "#63a5d6";
+        } else if (imc <= 24.9) {
+            imagem.src = "18.5-24.9.jpg";
+            document.body.style.background = "#7fc296";
+        } else if (imc <= 29.9) {
+            imagem.src = "25-29.9.jpg";
+            document.body.style.background = "#f8e454";
+        } else if (imc <= 34.9) {
+            imagem.src = "30-34.9.jpg";
+            document.body.style.background = "#f9a92e";
+        } else if (imc <= 39.9) {
+            imagem.src = "35-39.9.jpg";
+            document.body.style.background = "#fa6b41";
+        } else {
+            imagem.src = "+40.jpg";
+            document.body.style.background = "#d94d54";
+        }
+    }
+</script>
+    
+</body>
+</html>
