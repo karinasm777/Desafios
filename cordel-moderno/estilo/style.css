@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: darkgrey;
+    
+}
+
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header > h1 {
+    padding: 50px;
+    /*text-transform: uppercase; letra toda laiuscula */
+    font-variant: small-caps; /* primeira letra de cada malavra maiuscula*/
+}
+
+header > p {
+    padding-bottom: 50px;
+}
+
+header  a, footer a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+header a:hover, footer a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 10vh 10vh;
+    line-height: 2em;
+    padding-left: 30px;
+}
+section.normal {
+    background-color: white;
+}
+
+section.imagem {
+    background-color: rgb(70, 67, 67);
+    color: white;
+}
+    
+section.imagem > p {
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.459);
+}
+
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
